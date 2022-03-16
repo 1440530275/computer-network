@@ -1,7 +1,5 @@
 package com.haolong.chapter2.webServer;
 
-import com.sun.istack.internal.Nullable;
-
 /**
  * @author weihaolong
  * @date 2020-02-05 14:36:14
@@ -117,7 +115,6 @@ public enum HttpStatus {
         }
     }
 
-    @Nullable
     public static HttpStatus resolve(int statusCode) {
         HttpStatus[] var1 = values();
         int var2 = var1.length;

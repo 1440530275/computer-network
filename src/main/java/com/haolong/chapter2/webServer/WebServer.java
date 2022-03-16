@@ -39,6 +39,7 @@ public class WebServer {
                 return file.getName().endsWith(".class");
             }
         });
+        assert dirfiles != null;
         for(File f : dirfiles){
             try {
                 classSet.add(Class.forName("com.haolong.chapter2.webServer.controller." + f.getName().substring(0, f.getName().length() - 6)));
@@ -114,9 +115,7 @@ public class WebServer {
                 //直接就是未找到文件处理404 not found;
                 response.page("404");
             }
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
     }
@@ -124,7 +123,6 @@ public class WebServer {
 
     public static void main(String[] args) throws ClassNotFoundException {
         WebServer webServer = new WebServer();
-//        webServer.init();
         webServer.start(8080);
     }
 }

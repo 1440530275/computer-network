@@ -164,7 +164,7 @@ public class MailClient {
         MailClient mailClient = new MailClient("smtp.mxhichina.com", 25);
 
         //进行登录操作
-        mailClient.login("weihaolong@v1010.cn", "82571322Jw@");
+        mailClient.login("xx.cn", "****");
 
         //发送邮件
         String mailFrom = "weihaolong@v1010.cn";
