@@ -432,17 +432,17 @@ a.
 1	wblindix.sdv.fr      	212.95.66.126      	0.091 ms
 2	border-gateway2.sdv.fr      	212.95.69.227      	0.71 ms
 3	th2-10g-0003.sdv.fr      	212.95.64.54      	6.858 ms
-4	google2.par.franceix.net      	37.49.236.2      	6.902 ms
+4	google2.par.franceix.com.haolong.net      	37.49.236.2      	6.902 ms
 5	108.170.245.1      	108.170.245.1      	7.719 ms
 6	142.251.49.133      	142.251.49.133      	6.763 ms
-7	par21s19-in-f14.1e100.net      	142.250.179.78      	6.709 ms    
+7	par21s19-in-f14.1e100.com.haolong.net      	142.250.179.78      	6.709 ms    
 
 
 第二次结果:AS30781
 
-85.31.192.253  be3-200.hr01-corp.mar02.jaguar-network.net  0.904 ms
-78.153.231.2   be4.cr02.mar02.jaguar-network.net         0.976 ms
-85.31.194.207  be1.er03.mar02.jaguar-network.net    0.825 ms
+85.31.192.253  be3-200.hr01-corp.mar02.jaguar-network.com.haolong.net  0.904 ms
+78.153.231.2   be4.cr02.mar02.jaguar-network.com.haolong.net         0.976 ms
+85.31.194.207  be1.er03.mar02.jaguar-network.com.haolong.net    0.825 ms
 37.49.232.5    
 
 ```

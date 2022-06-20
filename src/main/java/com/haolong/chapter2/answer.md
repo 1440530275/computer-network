@@ -396,7 +396,7 @@ d.所在的学校没有多个ip地址
 
 e. 首先通过nslookup查询学校官网地址。
 
-后面https://whois.arin.net/ 对该解析地址进行查询。<br/>
+后面https://whois.arin.com.haolong.net/ 对该解析地址进行查询。<br/>
 Net Range: 111.0.0.0 - 111.255.255.255
 
 
@@ -408,28 +408,28 @@ g. 因为当某公司或者个人需要申请地址的时候， 需要查看该�
 
 a.
 ```
-dig +trace @a.root-servers.net v1010.cn
+dig +trace @a.root-servers.com.haolong.net v1010.cn
 
-; <<>> DiG 9.9.7-P3 <<>> +trace @a.root-servers.net v1010.cn
+; <<>> DiG 9.9.7-P3 <<>> +trace @a.root-servers.com.haolong.net v1010.cn
 ; (1 server found)
 ;; global options: +cmd
-.			518400	IN	NS	a.root-servers.net.
-.			518400	IN	NS	b.root-servers.net.
-.			518400	IN	NS	c.root-servers.net.
-.			518400	IN	NS	d.root-servers.net.
-.			518400	IN	NS	e.root-servers.net.
-.			518400	IN	NS	f.root-servers.net.
-.			518400	IN	NS	g.root-servers.net.
-.			518400	IN	NS	h.root-servers.net.
-.			518400	IN	NS	i.root-servers.net.
-.			518400	IN	NS	j.root-servers.net.
-.			518400	IN	NS	k.root-servers.net.
-.			518400	IN	NS	l.root-servers.net.
-.			518400	IN	NS	m.root-servers.net.
+.			518400	IN	NS	a.root-servers.com.haolong.net.
+.			518400	IN	NS	b.root-servers.com.haolong.net.
+.			518400	IN	NS	c.root-servers.com.haolong.net.
+.			518400	IN	NS	d.root-servers.com.haolong.net.
+.			518400	IN	NS	e.root-servers.com.haolong.net.
+.			518400	IN	NS	f.root-servers.com.haolong.net.
+.			518400	IN	NS	g.root-servers.com.haolong.net.
+.			518400	IN	NS	h.root-servers.com.haolong.net.
+.			518400	IN	NS	i.root-servers.com.haolong.net.
+.			518400	IN	NS	j.root-servers.com.haolong.net.
+.			518400	IN	NS	k.root-servers.com.haolong.net.
+.			518400	IN	NS	l.root-servers.com.haolong.net.
+.			518400	IN	NS	m.root-servers.com.haolong.net.
 .			518400	IN	RRSIG	NS 8 0 518400 20200214050000 20200201040000 33853 . aFkcOXQYjErpT9Itq1hNYzqKDpROX+vFx7ytObxrrzZUwjipCF9xWCdZ W+OwUfOAr8UkUUSkDMwZQx94Y2CndnmjUCP4KLdvdb1Ak8EjZjOm0Lfm erUyYkhJrICudq0pQjZZA2509QTtTuY+mqq0CGv9+ycNTU6c2C+D3duQ u96vuZ5xBf/Djoqjo3eJraLViqiG+2eTO/pUSNKLXj/F5jU8Kfm0Qc6C 8nqkJyGP+UkEssOM4E+Kq9W1/XNxyXehXXk5xn1kWRHco5P8fbre7BPa ItkooRQlqA12VatFu8S65rh15EBtw4Yrgg5GcRliaKXdzMZ07sCcY4sD UxpeAQ==
-;; Received 1097 bytes from 198.41.0.4#53(a.root-servers.net) in 397 ms
+;; Received 1097 bytes from 198.41.0.4#53(a.root-servers.com.haolong.net) in 397 ms
 
-cn.			172800	IN	NS	ns.cernet.net.
+cn.			172800	IN	NS	ns.cernet.com.haolong.net.
 cn.			172800	IN	NS	f.dns.cn.
 cn.			172800	IN	NS	g.dns.cn.
 cn.			172800	IN	NS	e.dns.cn.
@@ -439,7 +439,7 @@ cn.			172800	IN	NS	d.dns.cn.
 cn.			172800	IN	NS	c.dns.cn.
 cn.			86400	IN	DS	57724 8 2 5D0423633EB24A499BE78AA22D1C0C9BA36218FF49FD95A4CDF1A4AD 97C67044
 cn.			86400	IN	RRSIG	DS 8 1 86400 20200214050000 20200201040000 33853 . a2aE7RNn7QH/94sUjCH0fs5le6FEeE0DtH7A8XaIBNaBNqAeqRK/AUfV p/yRHr0zSJqLxTl2JHIjzSA2S3p2I1Yu5KDfNT5IPy8e2cz2+QIoymid JwDX23YOr8Q8BvWFi+3rkr20kisFJrv3MIF7nK4VxAWbPng8bbA8LclA 9CIU+aULbFzBL8E8IiCb1orMr3eLPICSKNC9z+YH2k5U5Ij9RCGGlODI jdRCnkNLIEv72ZlFbtaTZNNWCaK+cDNX7SlIiodmBm9dUBb2bW10spo4 cZ0QdBuGnWrdmCTJFbPGpoEWxoh5DpvAGOQyBySjL99HcgHkkdAgeIdg 66Ahsg==
-;; Received 699 bytes from 202.12.27.33#53(m.root-servers.net) in 46 ms
+;; Received 699 bytes from 202.12.27.33#53(m.root-servers.com.haolong.net) in 46 ms
 
 v1010.cn.		86400	IN	NS	dns26.hichina.com.
 v1010.cn.		86400	IN	NS	dns25.hichina.com.

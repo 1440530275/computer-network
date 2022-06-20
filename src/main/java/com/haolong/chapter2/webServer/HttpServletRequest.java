@@ -11,7 +11,7 @@ import java.util.Map;
  * @description request请求， 可以去看一下servlet-api源码， @See Servlet 里面的源码大有益处。
  * 里面我就进行部分实现进行抽取来进行自我实现。
  */
-public class HttpServletRequest {
+class HttpServletRequest {
 
     /**
      * 请求的方式 GET、POST、PUT等

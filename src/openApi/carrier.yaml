@@ -1,0 +1,194 @@
+openapi: 3.0.3
+info:
+  title: YOUQUANQIU WECHAT API
+  description: 游全球前台接口-运营商
+  version: 2.0.0
+servers:
+  - url: https://shopping.kqlink.com/global-charge-wechat-api/
+    description: 测试环境
+paths:
+  /wx/carrier/getCarrierInfo/{countryCode}:
+    post:
+      tags:
+        - 运营商
+      summary: 根据国家和充值号码查询运营商信息
+      parameters:
+          - in: path
+            name: countryCode
+            required: true
+            schema:
+              type: string
+              description: 国家编码
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                timestamp:
+                  type: integer
+                  format: int64
+                value:
+                  type: string
+                  description: 手机号码
+      responses:
+        '200':
+          description: 获取事件统计信息
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    type: string
+                  message:
+                    type: string
+                  timestamp:
+                    type: string
+                  result:
+                    $ref: "#/components/schemas/carrier"
+  /wx/carrier/getCarriers/{countryCode}:
+    get:
+      tags:
+        - 运营商
+      summary: 根据国家编号查询运营商列表信息
+      parameters:
+        - in: path
+          name: countryCode
+          required: true
+          schema:
+            type: string
+            description: 国家编码
+      responses:
+        '200':
+          description: 获取事件统计信息
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    type: string
+                  message:
+                    type: string
+                  timestamp:
+                    type: string
+                  result:
+                    items:
+                      $ref: "#/components/schemas/carrier"
+  /wx/carrier/getCarriers:
+    post:
+      tags:
+        - 运营商
+      summary: 根据条件查询运营商列表信息
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                timestamp:
+                  type: integer
+                  format: int64
+                page:
+                  type: object
+                  properties:
+                    currentPage:
+                      type: integer
+                    pageSize:
+                      type: integer
+                value:
+                  type: object
+                  properties:
+                    countryCode:
+                      type: string
+                      description: 国家编号
+                    carrierName:
+                      type: string
+                      description: 运营商名称
+                    type:
+                      type: string
+                      description: 类型
+      responses:
+        '200':
+          description: 获取事件统计信息
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    type: string
+                  message:
+                    type: string
+                  timestamp:
+                    type: string
+                  result:
+                    description: 实际结果可能会不一样，在这里只展示list信息，其实是一个分页信息
+                    items:
+                      $ref: "#/components/schemas/carrier"
+  /wx/carrier/get/{id}:
+    get:
+      tags:
+        - 运营商
+      summary: 根据id查询运营商列表信息
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            description: 运营商id
+      responses:
+        '200':
+          description: 运营商信息
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    type: string
+                  message:
+                    type: string
+                  timestamp:
+                    type: string
+                  result:
+                    $ref: "#/components/schemas/carrier"
+components:
+  schemas:
+    carrier:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: 自增id
+        kbossCarrierId:
+          type: integer
+          description: kbossId
+        countryCode:
+          type: string
+          description: 国家编号
+        carrierName:
+          type: string
+          description: 运营商名称
+        carrierFullName:
+          type: string
+          description: 运营商全名
+        carrierImgUrl:
+          type: string
+          description: 运营商图片
+        carrierInfo:
+          type: string
+          description: 运营商信息
+        valid:
+          type: boolean
+          description: 是否有效
+        pinQueryUrl:
+          type: string
+          description: pin码的查询地址
+        balanceQuery:
+          type: string
+          description: 余额查询
+        unavailableRemark:
+          type: string
+          description: 不能充值的号码或者类型
+        officialWeb:
+          type: string
+          description: 运营商的官网地址

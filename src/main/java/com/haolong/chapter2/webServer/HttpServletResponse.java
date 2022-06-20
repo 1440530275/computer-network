@@ -9,7 +9,7 @@ import java.util.Map;
  * @date 2020-02-05 17:59
  * @description response响应
  */
-public class HttpServletResponse {
+class HttpServletResponse {
     // 响应头
     private Map<String, String> headers = new HashMap<>(16);
 

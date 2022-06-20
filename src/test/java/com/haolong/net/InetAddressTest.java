@@ -1,10 +1,8 @@
-package net;
-
-import org.junit.Test;
+package com.haolong.net;
+import org.junit.jupiter.api.Test;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.nio.charset.StandardCharsets;
 
 /**
  * @author weihaolong

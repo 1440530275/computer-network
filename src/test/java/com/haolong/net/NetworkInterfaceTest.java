@@ -1,6 +1,6 @@
-package net;
+package com.haolong.net;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.net.InterfaceAddress;
 import java.net.NetworkInterface;
