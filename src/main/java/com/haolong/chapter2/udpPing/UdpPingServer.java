@@ -45,8 +45,6 @@ public class UdpPingServer {
                     datagramSocket.send(datagramPacket);
                 }
             }
-        } catch (SocketException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

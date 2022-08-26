@@ -1,9 +1,11 @@
 package com.haolong.chapter2.webServer;
 
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author weihaolong
@@ -11,7 +13,7 @@ import java.util.Map;
  * @description request请求， 可以去看一下servlet-api源码， @See Servlet 里面的源码大有益处。
  * 里面我就进行部分实现进行抽取来进行自我实现。
  */
-class HttpServletRequest {
+public class HttpServletRequest {
 
     /**
      * 请求的方式 GET、POST、PUT等
@@ -58,7 +60,7 @@ class HttpServletRequest {
         try {
             while ((len = inputStream.read(bytes)) != -1) {
                 //注意指定编码格式，发送方和接收方一定要统一，建议使用UTF-8
-                sb.append(new String(bytes, 0, len, "UTF-8"));
+                sb.append(new String(bytes, 0, len, StandardCharsets.UTF_8));
                 if(len < bytes.length){
                     break;
                 }
@@ -67,28 +69,28 @@ class HttpServletRequest {
             String[] params = sb.toString().split("\n");
 
             //判断是否是HTTP请求
-            if(params.length != 0 && params[0] != ""){
-                String[] requesyInfo;
-                requesyInfo = params[0].split(" ");
-                if(requesyInfo.length != 3 || !requesyInfo[2].contains("HTTP")){
+            if(params.length != 0 && !Objects.equals(params[0], "")){
+                String[] requestInfo;
+                requestInfo = params[0].split(" ");
+                if(requestInfo.length != 3 || !requestInfo[2].contains("HTTP")){
                     System.out.println("报错");
                 }
-                method = requesyInfo[0];
+                method = requestInfo[0];
 
                 //还需要特殊处理
-                int queryIndex = requesyInfo[1].indexOf('?');
+                int queryIndex = requestInfo[1].indexOf('?');
                 if(queryIndex == -1){
-                    uri = requesyInfo[1];
+                    uri = requestInfo[1];
                 }else{
-                    uri = requesyInfo[1].substring(0, queryIndex);
+                    uri = requestInfo[1].substring(0, queryIndex);
 
                     //查找后面的数据
-                    queryString = requesyInfo[1].substring(queryIndex + 1);
+                    queryString = requestInfo[1].substring(queryIndex + 1);
                     //key-value对应的值
 
                 }
 
-                version = requesyInfo[2];
+                version = requestInfo[2];
             }
 //            System.out.println("方法:" + method);
 //            System.out.println("uri:" + uri);

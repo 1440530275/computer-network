@@ -6,7 +6,7 @@ import java.net.*;
 /**
  * @author weihaolong
  * @date 2020-02-06 21:43:47
- * @description 写一个udp程序进行ping
+ * @desc 写一个udp程序进行ping
  */
 public class UdpPingClient {
 
@@ -41,8 +41,6 @@ public class UdpPingClient {
             }
 
             datagramSocket.close();
-        } catch (SocketException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

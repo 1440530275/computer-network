@@ -12,7 +12,7 @@ import java.util.*;
 /**
  * @author weihaolong
  * @date 2020-02-04 17:54:36
- * @description 手写一个简单的Web服务器
+ * @desc 手写一个简单的Web服务器
  */
 public class WebServer {
 
@@ -29,7 +29,7 @@ public class WebServer {
         //扫描@RequestMapping的方法, 直接扫描 com.haolong.chapter2.webServer下面的包
         Set<Class<?>> classSet = new LinkedHashSet<>();
         File file = new File(Resource.CLASS_PATH + "com/haolong/chapter2/webServer/controller");
-        if(!file.exists() || !file.isDirectory()){
+        if (!file.exists() || !file.isDirectory()) {
             throw new RuntimeException("该文件不存在或者该文件不是文件夹");
         }
         //class列表
@@ -40,7 +40,7 @@ public class WebServer {
             }
         });
         assert dirfiles != null;
-        for(File f : dirfiles){
+        for (File f : dirfiles) {
             try {
                 classSet.add(Class.forName("com.haolong.chapter2.webServer.controller." + f.getName().substring(0, f.getName().length() - 6)));
             } catch (ClassNotFoundException e) {
@@ -49,11 +49,11 @@ public class WebServer {
         }
 
         //扫描每个类下面的特殊注解
-        for(Class<?> c : classSet){
-            for(Method m : c.getMethods()){
+        for (Class<?> c : classSet) {
+            for (Method m : c.getMethods()) {
                 diMap.put(m.getName(), c.newInstance());
                 RequestMapping requestMapping = m.getAnnotation(RequestMapping.class);
-                if(requestMapping != null){
+                if (requestMapping != null) {
                     handlerMap.put(requestMapping.value(), m);
                 }
             }
@@ -77,41 +77,42 @@ public class WebServer {
 
         try {
             ServerSocket serverSocket = new ServerSocket(port);
-                while (true) {
-                    Socket socket = serverSocket.accept();
-                    //读取tcp里面的数据并且进行校验是否是http请求
-                    HttpServletRequest httpServletRequest = new HttpServletRequest(socket.getInputStream());
-                    HttpServletResponse httpServletResponse = new HttpServletResponse(socket.getOutputStream());
+            while (true) {
+                Socket socket = serverSocket.accept();
+                //读取tcp里面的数据并且进行校验是否是http请求
+                HttpServletRequest httpServletRequest = new HttpServletRequest(socket.getInputStream());
+                HttpServletResponse httpServletResponse = new HttpServletResponse(socket.getOutputStream());
 
-                    //处理请求
-                    service(httpServletRequest, httpServletResponse);
-                    socket.close();
-                }
-            } catch(IOException e){
-                e.printStackTrace();
+                //处理请求
+                service(httpServletRequest, httpServletResponse);
+                socket.close();
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * 处理请求
+     *
      * @param request
      * @param response
      */
-    public void service(HttpServletRequest request, HttpServletResponse response){
+    public void service(HttpServletRequest request, HttpServletResponse response) {
         //直接在里面进行处理, 也可以进行扩容进行补充
         Method method = handlerMap.get(request.getRequestUri());
 
-        if(method == null){
+        if (method == null) {
             response.page("404");
             return;
         }
 
         try {
             Object object = method.invoke(diMap.get(method.getName()), null);
-            if(object instanceof String){
+            if (object instanceof String) {
                 System.out.println("请求的页面路径:" + object);
                 response.page(object + "");
-            }else{
+            } else {
                 //直接就是未找到文件处理404 not found;
                 response.page("404");
             }

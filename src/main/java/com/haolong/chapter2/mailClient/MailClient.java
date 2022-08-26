@@ -12,7 +12,6 @@ import java.util.stream.Stream;
 /**
  * @author weihaolong
  * @date 2020-02-11 11:35:44
- * @description 邮件客户
  */
 public class MailClient {
 
@@ -130,9 +129,9 @@ public class MailClient {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(stringBuilder.toString());
+        System.out.println(stringBuilder);
         String response = stringBuilder.toString();
-        if (response != null && (response.startsWith("2") || response.startsWith("3"))) {
+        if (response.startsWith("2") || response.startsWith("3")) {
             // 211 系统状态或系统帮助响应
             // 214 帮助信息
             // 220 <domain> 服务就绪
@@ -164,11 +163,11 @@ public class MailClient {
         MailClient mailClient = new MailClient("smtp.mxhichina.com", 25);
 
         //进行登录操作
-        mailClient.login("xx.cn", "****");
+        mailClient.login("", "");
 
         //发送邮件
-        String mailFrom = "weihaolong@v1010.cn";
-        Set<String> receiver = Stream.of("1440530275@qq.com").collect(Collectors.toSet());
+        String mailFrom = "";
+        Set<String> receiver = Stream.of("").collect(Collectors.toSet());
         String subject = "手写邮箱客户端进行发送数据";
         String content = "发送真的会成功!";
         MailBean mailBean = new MailBean(mailFrom, receiver, subject, content);
@@ -176,9 +175,6 @@ public class MailClient {
 
         //发送成功之后进行退出操作
         mailClient.quit();
-
-//        String str = new String(Base64.getEncoder().encode("weihaolong".getBytes()));
-//        System.out.println(str);
     }
 
 

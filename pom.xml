@@ -60,31 +60,6 @@
             <version>1.6.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-http -->
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-http</artifactId>
-            <version>11.0.9</version>
-        </dependency>
-
-        <!--    <dependency>-->
-        <!--      <groupId>org.apache.httpcomponents</groupId>-->
-        <!--      <artifactId>httpclient</artifactId>-->
-        <!--      <version>4.5.13</version>-->
-        <!--    </dependency>-->
-
-        <!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore &ndash;&gt;-->
-        <!--    <dependency>-->
-        <!--      <groupId>org.apache.httpcomponents</groupId>-->
-        <!--      <artifactId>httpcore</artifactId>-->
-        <!--      <version>4.4.15</version>-->
-        <!--    </dependency>-->
-
-        <!--    <dependency>-->
-        <!--      <groupId>org.springframework</groupId>-->
-        <!--      <artifactId>spring-web</artifactId>-->
-        <!--      <version>5.2.6.RELEASE</version>-->
-        <!--    </dependency>-->
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -110,38 +85,7 @@
             <version>${log4j.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-to-slf4j -->
-        <!--    <dependency>-->
-        <!--      <groupId>org.apache.logging.log4j</groupId>-->
-        <!--      <artifactId>log4j-to-slf4j</artifactId>-->
-        <!--      <version>${log4j.version}</version>-->
-        <!--    </dependency>-->
 
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${commons.version}</version>
-        </dependency>
-
-        <!--    <dependency>-->
-        <!--      <groupId>ch.qos.logback</groupId>-->
-        <!--      <artifactId>logback-classic</artifactId>-->
-        <!--      <version>${logback.version}</version>-->
-        <!--      <scope>test</scope>-->
-        <!--    </dependency>-->
-
-        <!--    <dependency>-->
-        <!--      <groupId>ch.qos.logback</groupId>-->
-        <!--      <artifactId>logback-core</artifactId>-->
-        <!--      <version>${logback.version}</version>-->
-        <!--    </dependency>-->
-
-        <!--    <dependency>-->
-        <!--      <groupId>org.slf4j</groupId>-->
-        <!--      <artifactId>slf4j-reload4j</artifactId>-->
-        <!--      <version>1.7.36</version>-->
-        <!--      <scope>test</scope>-->
-        <!--    </dependency>-->
 
     </dependencies>
 
