@@ -160,6 +160,7 @@ public class MailClient {
     }
 
     public static void main(String[] args) {
+        //连接的自己邮件服务的地址, 该地址为 阿里云邮箱的地址
         MailClient mailClient = new MailClient("smtp.mxhichina.com", 25);
 
         //进行登录操作
