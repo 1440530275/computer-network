@@ -22,7 +22,7 @@
         <lombok.version>1.18.24</lombok.version>
         <commons.version>2.11.0</commons.version>
         <commons-logging.version>1.2</commons-logging.version>
-        <log4j.version>2.17.2</log4j.version>
+        <log4j.version>2.25.3</log4j.version>
         <logback.version>1.2.11</logback.version>
     </properties>
 
